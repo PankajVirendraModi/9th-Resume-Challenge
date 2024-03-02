@@ -1,4 +1,4 @@
-### Creating Database 'retail_events_db' 
+### Creating Database `retail_events_db`
 ``` SQL
 CREATE DATABASE `retail_events_db`;
 USE `retail_events_db`;
