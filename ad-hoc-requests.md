@@ -64,7 +64,7 @@ INSERT INTO `fact_events` VALUES ('7f650b','STCBE-2','CAMP_SAN_01','P11',190,'50
 ```
 
 
-
+<br><br>
 ## 1. Provide a list of products with a base price greater than 500 and that are featured in promo type of 'BOGOF' (Buy One Get One Free).
 
 ``` SQL
@@ -83,7 +83,7 @@ WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 > [!NOTE]
 The above query and output table(question no 01) shows the product name, category, and base price for two products: Atiq_Double_Bedsheet_set and Atiq_waterproof_Immersion_Rod. The purpose of this analysis is to compare the base prices of these two products. The main finding is:
 > * The Atiq_Double_Bedsheet_set product has a higher base price (1190) than the Atiq_waterproof_Immersion_Rod product (1020). Both products belong to different categories: Home Care and Home Appliances, respectively
-
+<br><br>
 ## 2. Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts.(dim_stores)
 
 ``` SQL
@@ -112,7 +112,7 @@ The fifth table shows the city and the total stores for different cities in Indi
 > * Trivandrum and Vijayawada have the lowest number of stores (2) among all cities, followed by Mangalore (3) and Mysuru (4).
 The total number of stores across all cities is 50.
 
-
+<br><br>
 ## 3. Generate a report that displays each campaign along with the total revenue generated before and after the campaign?
 
 ``` SQL
@@ -143,7 +143,7 @@ GROUP BY campaign_name;
 > * The percentage increase in revenue after promo for the Diwali campaign was 80.05%, while for the Sankranti campaign it was 33.38%.
 > * The Diwali campaign was more successful and effective than the Sankranti campaign in terms of generating revenue.
 
-
+<br><br>
 ## 4. Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign. Additionally, provide rankings for the categories based on their ISU%. 
 
 ``` SQL
@@ -179,7 +179,7 @@ The Above Query and the output table(question no 04) shows the ISU percentage an
 > * The Grocery & Staples category had the lowest ISU percentage (18.05) and rank (5) among all categories.
 > * The ISU percentage indicates the percentage increase in sales units after the promo compared to before the promo. A higher ISU percentage means a higher impact of the promo on the sales of that category.
 
-
+<br>
 ## 5. Create a report featuring the Top 5 products, ranked by Incremental Revenue Percentage (IR%), across all campaigns. The report will provide essential information including product name, category, and ir%.
 
 ``` SQL
