@@ -156,6 +156,8 @@ GROUP BY campaign_name;
 
 WITH CTE_ISU AS(
     SELECT p.category,
+    ROUND((SUM(quantity_sold_after_promo) / SUM(quantity_sold_before_promo) - 1) * 100,2) as ISU_PERCENTAGE
+    -- ROUND(100*(SUM(quantity_sold_after_promo)-SUM(quantity_sold_before_promo))/SUM(quantity_sold_before_promo),2) as ISU_PERCENTAGE
     ROUND(100*(SUM(quantity_sold_after_promo)-SUM(quantity_sold_before_promo))/SUM(quantity_sold_before_promo),2) as ISU_PERCENTAGE
     FROM fact_events fe
     INNER JOIN dim_products p ON fe.product_code = p.product_code
