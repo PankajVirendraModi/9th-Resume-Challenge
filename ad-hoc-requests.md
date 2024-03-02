@@ -73,29 +73,22 @@ INNER JOIN dim_products P
 ON E.product_code = P.product_code
 WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 ```
-/*
 
-SELECT p.product_name
-FROM dim_products p
-INNER JOIN fact_events fe ON p.product_code = fe.product_code
-WHERE fe.promo_type = 'BOGOF'
-AND fe.base_price > 500
-GROUP BY p.product_name;
-*/
 /*
 2. Generate a report that provides an overview of the number of stores in each city.
 	The results will be sorted in descending order of store counts.(dim_stores)
 */
--- select count(distinct city) from dim_stores;
+``` SQL
 SELECT city, count(store_id) as total_stores
 FROM dim_stores
 GROUP BY city
 ORDER BY total_stores DESC;
+```
 
 /*
 3. Generate a report that displays each campaign along with the total revenue generated before and after the campaign?
 */
--- recheck this code with seperately
+``` SQL
 SELECT c.campaign_name,
     SUM(base_price * quantity_sold_before_promo) AS revenue_before_promo,
     SUM(CASE
@@ -109,11 +102,12 @@ SELECT c.campaign_name,
 FROM fact_events fe
 INNER JOIN dim_campaigns c ON fe.campaign_id = c.campaign_id
 GROUP BY campaign_name;
-
+```
 /*
 4. Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign.
 	Additionally, provide rankings for the categories based on their ISU%. 
 */
+``` SQL
 -- select sum(quantity_sold_before_promo) from fact_events; -- '209050'
 -- select sum(quantity_sold_after_promo) from fact_events; -- '435473'
 
@@ -127,12 +121,13 @@ WITH CTE_ISU AS(
     GROUP BY p.category
 )
 SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC) FROM CTE_ISU;
-
+```
 /*
 5. Create a report featuring the Top 5 products,
 	ranked by Incremental Revenue Percentage (IR%), across all campaigns.
 	The report will provide essential information including product name, category, and ir%.
 */
+``` SQL
 with total_revenue as(
 	select p.product_name, p.category, (fe.base_price)*(fe.quantity_sold_before_promo) AS revenue_before_promo,
 		case when fe.promo_type='50% OFF' then (fe.base_price*0.5)*fe.quantity_sold_after_promo
@@ -150,8 +145,11 @@ cte_ir_percentage as(
 	from total_revenue group by product_name,category
 )
 SELECT product_name, category, IR_percentage from cte_ir_percentage order by IR_percentage desc limit 5;
+```
 
+``` SQL
 SELECT * FROM dim_campaigns;
 SELECT * FROM dim_products;
 SELECT * FROM dim_stores;
 SELECT * FROM fact_events;
+```
