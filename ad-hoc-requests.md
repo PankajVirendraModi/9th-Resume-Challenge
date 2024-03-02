@@ -1,10 +1,10 @@
-CREATE DATABASE `retail_events_db`;
+CREATE DATABASE `retail_events_db`; <br>
 USE `retail_events_db`;
 
 
 ### Table structure for table `dim_campaigns`
 
-`PostgreSQL`
+
 ``` SQL
 CREATE TABLE `dim_campaigns` (
   `campaign_id` varchar(20) NOT NULL,
@@ -13,10 +13,11 @@ CREATE TABLE `dim_campaigns` (
   `end_date` date NOT NULL,
   PRIMARY KEY (`campaign_id`)
 );
-```
+
+<br>
 
 INSERT INTO `dim_campaigns` VALUES ('CAMP_DIW_01','Diwali','2023-11-12','2023-11-18'),('CAMP_SAN_01','Sankranti','2024-01-10','2024-01-16');
-
+```
 
 ### Table structure for table `dim_products`
 
