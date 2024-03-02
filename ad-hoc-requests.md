@@ -152,6 +152,14 @@ SELECT product_name, category, IR_percentage from cte_ir_percentage order by IR_
 ```
 ![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/21b4f71f-ec0c-4604-a06b-d2f441c0281b)
 
+| product_name                           | category        | IR_percentage |
+|---------------------------------------|-----------------|--------------|
+| Atiq_Home_Essential_8_Product_Combo   | Combo1          | 136.109243   |
+| Atiq_waterproof_Immersion_Rod         | Home Appliances | 83.093692    |
+| Atiq_High_Glo_15W_LED_Bulb            | Home Appliances | 81.491813    |
+| Atiq_Double_Bedsheet_set              | Home Care       | 79.133952    |
+| Atiq_Curtains                         | Home Care       | 77.667683    |
+
 
 ``` SQL
 SELECT * FROM dim_campaigns;
