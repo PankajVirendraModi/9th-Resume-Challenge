@@ -15,7 +15,8 @@ CREATE TABLE `dim_campaigns` (
 );
 
 
-INSERT INTO `dim_campaigns` VALUES ('CAMP_DIW_01','Diwali','2023-11-12','2023-11-18'),('CAMP_SAN_01','Sankranti','2024-01-10','2024-01-16');
+INSERT INTO `dim_campaigns` VALUES ('CAMP_DIW_01','Diwali','2023-11-12','2023-11-18'),
+				('CAMP_SAN_01','Sankranti','2024-01-10','2024-01-16');
 ```
 
 ### Table structure for table `dim_products`
