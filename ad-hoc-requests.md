@@ -77,8 +77,7 @@ WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 ```
 
 
-2. Generate a report that provides an overview of the number of stores in each city.
-	The results will be sorted in descending order of store counts.(dim_stores)
+2. Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts.(dim_stores)
 
 ``` SQL
 SELECT city, count(store_id) as total_stores
@@ -106,15 +105,14 @@ INNER JOIN dim_campaigns c ON fe.campaign_id = c.campaign_id
 GROUP BY campaign_name;
 ```
 
-4. Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign.
-	Additionally, provide rankings for the categories based on their ISU%. 
+4. Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign. Additionally, provide rankings for the categories based on their ISU%. 
 
 ``` SQL
 -- select sum(quantity_sold_before_promo) from fact_events; -- '209050'
 -- select sum(quantity_sold_after_promo) from fact_events; -- '435473'
 
 WITH CTE_ISU AS(
-	SELECT p.category,
+    SELECT p.category,
     ROUND(100*(SUM(quantity_sold_after_promo)-SUM(quantity_sold_before_promo))/SUM(quantity_sold_before_promo),2) as ISU_PERCENTAGE
     FROM fact_events fe
     INNER JOIN dim_products p ON fe.product_code = p.product_code
@@ -125,9 +123,7 @@ WITH CTE_ISU AS(
 SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC) FROM CTE_ISU;
 ```
 
-5. Create a report featuring the Top 5 products,
-	ranked by Incremental Revenue Percentage (IR%), across all campaigns.
-	The report will provide essential information including product name, category, and ir%.
+5. Create a report featuring the Top 5 products, ranked by Incremental Revenue Percentage (IR%), across all campaigns. The report will provide essential information including product name, category, and ir%.
 
 ``` SQL
 with total_revenue as(
