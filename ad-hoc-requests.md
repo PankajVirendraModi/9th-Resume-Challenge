@@ -1,6 +1,7 @@
+``` SQL
 CREATE DATABASE `retail_events_db`; <br>
 USE `retail_events_db`;
-
+```
 
 ### Table structure for table `dim_campaigns`
 
