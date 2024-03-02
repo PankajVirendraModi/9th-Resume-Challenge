@@ -80,7 +80,7 @@ WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 | P08          | Atiq_Double_Bedsheet_set    | 1190       |
 | P14          | Atiq_waterproof_Immersion_Rod | 1020      |
 
-> [!important]
+> [!IMPORTANT]
 The above query and output table(question no 01) shows the product name, category, and base price for two products: Atiq_Double_Bedsheet_set and Atiq_waterproof_Immersion_Rod. The purpose of this analysis is to compare the base prices of these two products. The main finding is:
 > * The Atiq_Double_Bedsheet_set product has a higher base price (1190) than the Atiq_waterproof_Immersion_Rod product (1020). Both products belong to different categories: Home Care and Home Appliances, respectively
 
@@ -107,7 +107,7 @@ ORDER BY total_stores DESC;
 | Trivandrum      | 2            |
 | Vijayawada      | 2            |
 
-> [!NOTE]
+> [!IMPORTANT]
 The fifth table shows the city and the total stores for different cities in India. The purpose of this analysis is to find out the distribution of stores across different cities. The main findings are:
 > * Bengaluru has the highest number of stores (10) among all cities, followed by Chennai (8) and Hyderabad (7).
 > * Trivandrum and Vijayawada have the lowest number of stores (2) among all cities, followed by Mangalore (3) and Mysuru (4).
@@ -137,7 +137,7 @@ GROUP BY campaign_name;
 | Sankranti     | 58127429             | 77530129.3900       |
 | Diwali        | 82573759             | 148705487.0200      | 
 
-> [!NOTE]
+> [!IMPORTANT]
  The Query and output table(question no 03) shows the revenue before and after promo for two campaigns: Sankranti and Diwali. The purpose of this analysis is to compare the effectiveness of the two campaigns in terms of generating revenue. The main findings are:
 > * The Diwali campaign had a higher revenue before promo (82,573,759) than the Sankranti campaign (58,127,429).
 > * Both campaigns had an increase in revenue after promo, but the Diwali campaign had a larger increase (66,131,728) than the Sankranti campaign (19,402,700.39).
@@ -171,7 +171,7 @@ SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC)
 | Personal Care     | 31.06          | 4    |
 | Grocery & Staples | 18.05          | 5    |
 
-> [!NOTE]
+> [!IMPORTANT]
 The Above Query and the output table(question no 04) shows the ISU percentage and rank for different categories of products for the Diwali campaign. The purpose of this analysis is to measure the impact of the promo on the sales of different categories of products. The main findings are:
 > * The Home Appliances category had the highest ISU percentage (244.23) and rank (1) among all categories.
 > * The Combo1 category had the second highest ISU percentage (202.36) and rank (2) among all categories.
@@ -211,7 +211,7 @@ SELECT product_name, category, IR_percentage from cte_ir_percentage order by IR_
 | Atiq_Double_Bedsheet_set              | Home Care       | 79.133952    |
 | Atiq_Curtains                         | Home Care       | 77.667683    |
 
-> [!NOTE]
+> [!IMPORTANT]
 The above Query and the output table(question no 05) shows the product name, category, and IR percentage for different products for the Diwali campaign. The purpose of this analysis is to identify the products that had the highest and lowest impact of the promo on their revenue. The main findings are:
 > * The Atiq_Home_Essential_8_Product_Combo product had the highest IR percentage (136.11) among all products. It belongs to the Combo1 category, which had the second highest ISU percentage among all categories.
 > * The Atiq_waterproof_Immersion_Rod product had the second highest IR percentage (83.09) among all products. It belongs to the Home Appliances category, which had the highest ISU percentage among all categories.
