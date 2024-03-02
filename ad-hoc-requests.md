@@ -75,7 +75,7 @@ INNER JOIN dim_products P
 ON E.product_code = P.product_code
 WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 ```
-![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/1ba7e29c-00ce-4cdb-ace2-b377fdf436b4)
+--> ![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/1ba7e29c-00ce-4cdb-ace2-b377fdf436b4)
 | product_code | product_name                 | base_price |
 |--------------|-----------------------------|------------|
 | P08          | Atiq_Double_Bedsheet_set    | 1190       |
