@@ -80,9 +80,10 @@ WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 | P08          | Atiq_Double_Bedsheet_set    | 1190       |
 | P14          | Atiq_waterproof_Immersion_Rod | 1020      |
 
-> [!NOTE]
+> [!important]
 The above query and output table(question no 01) shows the product name, category, and base price for two products: Atiq_Double_Bedsheet_set and Atiq_waterproof_Immersion_Rod. The purpose of this analysis is to compare the base prices of these two products. The main finding is:
 > * The Atiq_Double_Bedsheet_set product has a higher base price (1190) than the Atiq_waterproof_Immersion_Rod product (1020). Both products belong to different categories: Home Care and Home Appliances, respectively
+
 <br><br>
 ## 2. Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts.(dim_stores)
 
@@ -179,7 +180,7 @@ The Above Query and the output table(question no 04) shows the ISU percentage an
 > * The Grocery & Staples category had the lowest ISU percentage (18.05) and rank (5) among all categories.
 > * The ISU percentage indicates the percentage increase in sales units after the promo compared to before the promo. A higher ISU percentage means a higher impact of the promo on the sales of that category.
 
-<br>
+<br><br>
 ## 5. Create a report featuring the Top 5 products, ranked by Incremental Revenue Percentage (IR%), across all campaigns. The report will provide essential information including product name, category, and ir%.
 
 ``` SQL
