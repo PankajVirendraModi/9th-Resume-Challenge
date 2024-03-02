@@ -62,10 +62,10 @@ INSERT INTO `fact_events` VALUES ('7f650b','STCBE-2','CAMP_SAN_01','P11',190,'50
 ```
 
 
-/*
+
 1. Provide a list of products with a base price greater than 500
 	and that are featured in promo type of 'BOGOF' (Buy One Get One Free).
-*/
+
 ``` SQL
 SELECT DISTINCT E.product_code, P.product_name, E.base_price
 FROM fact_events E
@@ -74,10 +74,10 @@ ON E.product_code = P.product_code
 WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 ```
 
-/*
+
 2. Generate a report that provides an overview of the number of stores in each city.
 	The results will be sorted in descending order of store counts.(dim_stores)
-*/
+
 ``` SQL
 SELECT city, count(store_id) as total_stores
 FROM dim_stores
@@ -85,9 +85,9 @@ GROUP BY city
 ORDER BY total_stores DESC;
 ```
 
-/*
+
 3. Generate a report that displays each campaign along with the total revenue generated before and after the campaign?
-*/
+
 ``` SQL
 SELECT c.campaign_name,
     SUM(base_price * quantity_sold_before_promo) AS revenue_before_promo,
@@ -103,10 +103,10 @@ FROM fact_events fe
 INNER JOIN dim_campaigns c ON fe.campaign_id = c.campaign_id
 GROUP BY campaign_name;
 ```
-/*
+
 4. Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign.
 	Additionally, provide rankings for the categories based on their ISU%. 
-*/
+
 ``` SQL
 -- select sum(quantity_sold_before_promo) from fact_events; -- '209050'
 -- select sum(quantity_sold_after_promo) from fact_events; -- '435473'
@@ -122,11 +122,11 @@ WITH CTE_ISU AS(
 )
 SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC) FROM CTE_ISU;
 ```
-/*
+
 5. Create a report featuring the Top 5 products,
 	ranked by Incremental Revenue Percentage (IR%), across all campaigns.
 	The report will provide essential information including product name, category, and ir%.
-*/
+
 ``` SQL
 with total_revenue as(
 	select p.product_name, p.category, (fe.base_price)*(fe.quantity_sold_before_promo) AS revenue_before_promo,
