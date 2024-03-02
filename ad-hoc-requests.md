@@ -76,6 +76,10 @@ ON E.product_code = P.product_code
 WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 ```
 ![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/1ba7e29c-00ce-4cdb-ace2-b377fdf436b4)
+| product_code | product_name                 | base_price |
+|--------------|-----------------------------|------------|
+| P08          | Atiq_Double_Bedsheet_set    | 1190       |
+| P14          | Atiq_waterproof_Immersion_Rod | 1020      |
 
 
 2. Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts.(dim_stores)
@@ -87,6 +91,18 @@ GROUP BY city
 ORDER BY total_stores DESC;
 ```
 ![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/50bd3247-baee-44b6-89ae-f8ec371bd9c1)
+| City            | Total Stores |
+|-----------------|--------------|
+| Bengaluru       | 10           |
+| Chennai         | 8            |
+| Hyderabad       | 7            |
+| Coimbatore      | 5            |
+| Visakhapatnam   | 5            |
+| Madurai         | 4            |
+| Mysuru          | 4            |
+| Mangalore       | 3            |
+| Trivandrum      | 2            |
+| Vijayawada      | 2            |
 
 
 3. Generate a report that displays each campaign along with the total revenue generated before and after the campaign?
@@ -107,7 +123,10 @@ INNER JOIN dim_campaigns c ON fe.campaign_id = c.campaign_id
 GROUP BY campaign_name;
 ```
 ![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/0ce13af4-595b-4931-a4a2-bbd4857c4d1a)
-
+| campaign_name | revenue_before_promo | revenue_after_promo |
+|---------------|----------------------|---------------------|
+| Sankranti     | 58127429             | 77530129.3900       |
+| Diwali        | 82573759             | 148705487.0200      | 
 
 4. Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign. Additionally, provide rankings for the categories based on their ISU%. 
 
@@ -127,7 +146,13 @@ WITH CTE_ISU AS(
 SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC) rnk FROM CTE_ISU;
 ```
 ![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/ec1b4952-3128-4307-97f4-32d85f193c86)
-
+| Category          | ISU_PERCENTAGE | Rank |
+|-------------------|----------------|------|
+| Home Appliances   | 244.23         | 1    |
+| Combo1            | 202.36         | 2    |
+| Home Care         | 79.63          | 3    |
+| Personal Care     | 31.06          | 4    |
+| Grocery & Staples | 18.05          | 5    |
 
 5. Create a report featuring the Top 5 products, ranked by Incremental Revenue Percentage (IR%), across all campaigns. The report will provide essential information including product name, category, and ir%.
 
