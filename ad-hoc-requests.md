@@ -65,7 +65,7 @@ INSERT INTO `fact_events` VALUES ('7f650b','STCBE-2','CAMP_SAN_01','P11',190,'50
 
 
 
-1. Provide a list of products with a base price greater than 500
+## 1. Provide a list of products with a base price greater than 500
 	and that are featured in promo type of 'BOGOF' (Buy One Get One Free).
 
 ``` SQL
@@ -81,15 +81,15 @@ WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 | P08          | Atiq_Double_Bedsheet_set    | 1190       |
 | P14          | Atiq_waterproof_Immersion_Rod | 1020      |
 
-> [!Findings]
+> [! NOTE]
 > The Query and output table shows the revenue before and after promo for two campaigns: Sankranti and Diwali. The purpose of this analysis is to compare the effectiveness of the two campaigns in terms of generating revenue. The main findings are:
 > - The Diwali campaign had a higher revenue before promo (82,573,759) than the Sankranti campaign (58,127,429).
-> - Both campaigns had an increase in revenue after promo, but the Diwali campaign had a larger increase (66,131,728) than the Sankranti campaign (19,402,700.39).
+> * Both campaigns had an increase in revenue after promo, but the Diwali campaign had a larger increase (66,131,728) than the Sankranti campaign (19,402,700.39).
 > - The percentage increase in revenue after promo for the Diwali campaign was 80.05%, while for the Sankranti campaign it was 33.38%.
 > - The Diwali campaign was more successful and effective than the Sankranti campaign in terms of generating revenue.
 
 
-2. Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts.(dim_stores)
+### 2. Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts.(dim_stores)
 
 ``` SQL
 SELECT city, count(store_id) as total_stores
@@ -112,7 +112,7 @@ ORDER BY total_stores DESC;
 | Vijayawada      | 2            |
 
 
-3. Generate a report that displays each campaign along with the total revenue generated before and after the campaign?
+# 3. Generate a report that displays each campaign along with the total revenue generated before and after the campaign?
 
 ``` SQL
 SELECT c.campaign_name,
