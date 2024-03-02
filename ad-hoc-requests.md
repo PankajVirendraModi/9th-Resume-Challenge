@@ -75,7 +75,6 @@ INNER JOIN dim_products P
 ON E.product_code = P.product_code
 WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 ```
---> ![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/1ba7e29c-00ce-4cdb-ace2-b377fdf436b4)
 | product_code | product_name                 | base_price |
 |--------------|-----------------------------|------------|
 | P08          | Atiq_Double_Bedsheet_set    | 1190       |
@@ -90,7 +89,6 @@ FROM dim_stores
 GROUP BY city
 ORDER BY total_stores DESC;
 ```
-![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/50bd3247-baee-44b6-89ae-f8ec371bd9c1)
 | City            | Total Stores |
 |-----------------|--------------|
 | Bengaluru       | 10           |
@@ -122,7 +120,6 @@ FROM fact_events fe
 INNER JOIN dim_campaigns c ON fe.campaign_id = c.campaign_id
 GROUP BY campaign_name;
 ```
-![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/0ce13af4-595b-4931-a4a2-bbd4857c4d1a)
 | campaign_name | revenue_before_promo | revenue_after_promo |
 |---------------|----------------------|---------------------|
 | Sankranti     | 58127429             | 77530129.3900       |
@@ -145,7 +142,6 @@ WITH CTE_ISU AS(
 )
 SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC) rnk FROM CTE_ISU;
 ```
-![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/ec1b4952-3128-4307-97f4-32d85f193c86)
 | Category          | ISU_PERCENTAGE | Rank |
 |-------------------|----------------|------|
 | Home Appliances   | 244.23         | 1    |
@@ -175,7 +171,6 @@ cte_ir_percentage as(
 )
 SELECT product_name, category, IR_percentage from cte_ir_percentage order by IR_percentage desc limit 5;
 ```
-![image](https://github.com/PankajVirendraModi/9th-Resume-Challenge/assets/75255261/21b4f71f-ec0c-4604-a06b-d2f441c0281b)
 
 | product_name                           | category        | IR_percentage |
 |---------------------------------------|-----------------|--------------|
