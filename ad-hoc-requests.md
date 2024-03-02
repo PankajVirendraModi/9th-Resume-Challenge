@@ -65,8 +65,7 @@ INSERT INTO `fact_events` VALUES ('7f650b','STCBE-2','CAMP_SAN_01','P11',190,'50
 
 
 
-## 1. Provide a list of products with a base price greater than 500
-	and that are featured in promo type of 'BOGOF' (Buy One Get One Free).
+## 1. Provide a list of products with a base price greater than 500 and that are featured in promo type of 'BOGOF' (Buy One Get One Free).
 
 ``` SQL
 SELECT DISTINCT E.product_code, P.product_name, E.base_price
