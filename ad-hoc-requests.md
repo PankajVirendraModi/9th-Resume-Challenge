@@ -81,8 +81,10 @@ WHERE E.base_price >500 AND E.promo_type = "BOGOF";
 | P14          | Atiq_waterproof_Immersion_Rod | 1020      |
 
 > [!IMPORTANT]
-The above query and output table(question no 01) shows the product name, category, and base price for two products: Atiq_Double_Bedsheet_set and Atiq_waterproof_Immersion_Rod. The purpose of this analysis is to compare the base prices of these two products. The main finding is:
-> * The Atiq_Double_Bedsheet_set product has a higher base price (1190) than the Atiq_waterproof_Immersion_Rod product (1020). Both products belong to different categories: Home Care and Home Appliances, respectively
+The above query and output table(question no 01) shows the product name, category, and base price of products with a base price greater than 500 and that are featured in promo type of 'BOGOF':
+> * There are only two products that have a base price greater than 500 and are featured in promo type of ‘BOGOF’.
+> * These products are Atiq Double Bedsheet set and Atiq waterproof Immersion Rod.
+> * The base prices of these products are 1190 and 1020 respectively, The average base price of the products in the output is 1105.
 
 <br><br>
 ## 2. Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts.(dim_stores)
@@ -108,10 +110,11 @@ ORDER BY total_stores DESC;
 | Vijayawada      | 2            |
 
 > [!IMPORTANT]
-The fifth table shows the city and the total stores for different cities in India. The purpose of this analysis is to find out the distribution of stores across different cities. The main findings are:
+The above query and the output table(question no 02) shows the city and the total stores for different cities in India. The purpose of this analysis is to find out the distribution of stores across different cities. The main findings are:
 > * Bengaluru has the highest number of stores (10) among all cities, followed by Chennai (8) and Hyderabad (7).
-> * Trivandrum and Vijayawada have the lowest number of stores (2) among all cities, followed by Mangalore (3) and Mysuru (4).
-The total number of stores across all cities is 50.
+> * Coimbatore and Visakhapatnam each have (5) stores, suggesting a moderate level of business activity in these cities.
+> * Madurai, Mysuru, and Mangalore have fewer stores, with 4, 4, and 3 stores respectively. This could indicate either a smaller market size or room for potential expansion.
+> * Trivandrum and Vijayawada have the least number of stores, each with only 2 stores. 
 
 <br><br>
 ## 3. Generate a report that displays each campaign along with the total revenue generated before and after the campaign?
@@ -173,11 +176,11 @@ SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC)
 
 > [!IMPORTANT]
 The Above Query and the output table(question no 04) shows the ISU percentage and rank for different categories of products for the Diwali campaign. The purpose of this analysis is to measure the impact of the promo on the sales of different categories of products. The main findings are:
-> * The Home Appliances category had the highest ISU percentage (244.23) and rank (1) among all categories.
-> * The Combo1 category had the second highest ISU percentage (202.36) and rank (2) among all categories.
-> * The Home Care category had the third highest ISU percentage (79.63) and rank (3) among all categories.
-> * The Personal Care category had the fourth highest ISU percentage (31.06) and rank (4) among all categories.
-> * The Grocery & Staples category had the lowest ISU percentage (18.05) and rank (5) among all categories.
+> * The Home Appliances category had the highest ISU percentage (244.23%) and rank (1) among all categories.
+> * The Combo1 category had the second highest ISU percentage (202.36%) and rank (2) among all categories.
+> * The Home Care category had the third highest ISU percentage (79.63%) and rank (3) among all categories.
+> * The Personal Care category had the fourth highest ISU percentage (31.06%) and rank (4) among all categories.
+> * The Grocery & Staples category had the lowest ISU percentage (18.05%) and rank (5) among all categories.
 > * The ISU percentage indicates the percentage increase in sales units after the promo compared to before the promo. A higher ISU percentage means a higher impact of the promo on the sales of that category.
 
 <br><br>
