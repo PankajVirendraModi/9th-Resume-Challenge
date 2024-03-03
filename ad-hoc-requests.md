@@ -156,12 +156,12 @@ GROUP BY campaign_name;
 
 WITH CTE_ISU AS(
     SELECT p.category,
-    ROUND((SUM(quantity_sold_after_promo) / SUM(quantity_sold_before_promo) - 1) * 100,2) as ISU_PERCENTAGE
+    ROUND((SUM(fe.quantity_sold_after_promo) / SUM(fe.quantity_sold_before_promo) - 1) * 100,2) as ISU_PERCENTAGE
     -- ROUND(100*(SUM(quantity_sold_after_promo)-SUM(quantity_sold_before_promo))/SUM(quantity_sold_before_promo),2) as ISU_PERCENTAGE
     FROM fact_events fe
     INNER JOIN dim_products p ON fe.product_code = p.product_code
     INNER JOIN dim_campaigns c ON fe.campaign_id = c.campaign_id
-    WHERE campaign_name = 'Diwali'
+    WHERE c.campaign_name = 'Diwali'
     GROUP BY p.category
 )
 SELECT category, ISU_PERCENTAGE, ROW_NUMBER() OVER(ORDER BY ISU_PERCENTAGE DESC) rnk FROM CTE_ISU;
